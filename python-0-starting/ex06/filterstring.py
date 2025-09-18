@@ -3,31 +3,31 @@ import sys
 import string
 
 
-def count(l1: str, l2: str) -> int:
-    '''count(l1: str, l2: str) -> int\n
-return number of characters l1 found in l2'''
-    return len(list(filter(lambda c: c in l2, l1)))
+def filterstring(sentence: str, amount: int) -> list:
+    '''
+    filterstriing(sentence: str, amount: int) -> list
 
+    Parameters:
+        sentence (str): string to filter word
+        amount (int): length of character greater than
 
-def filterstriing(sentence: str, amount: int) -> list:
-    '''filterstriing(sentence: str, amount: int) -> list
-return list of string fillter by length greater than amount
-'''
-    words = [el for el in sentence.split(" ")
-             if count(el, string.punctuation) == 0]
-    return ft_filter(lambda x: len(x) >= amount, words)
+    Return:
+        Words are separated from each other by space characters.
+        Strings do not contain any special character.
+    '''
+    words = [s for s in sentence.split(" ") if not
+             len(list(ft_filter(lambda c: c in string.punctuation, s)))]
+    return list(ft_filter(lambda x: len(x) >= amount, words))
 
 
 def main() -> None:
-    '''main() -> None\n
-main function
+    '''
+    Main function to handle input and call filterstring function
     '''
     if len(sys.argv) != 3:
-        return print("AssertionError: the argument are bad")
-    try:
-        print(filterstriing(sys.argv[1], int(sys.argv[2])))
-    except Exception:
         print("AssertionError: the argument are bad")
+    else:
+        print(filterstring(sys.argv[1], int(sys.argv[2])))
 
 
 if __name__ == "__main__":

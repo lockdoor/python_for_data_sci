@@ -1,15 +1,18 @@
 import sys
 
-def whatis(argv):
+
+def whatis(argv) -> None:
     if len(argv) > 2:
-        return print("AssertionError: more than one argument is provided")
+        print("AssertionError: more than one argument is provided")
+        return
     elif len(argv) < 2:
-        return print("AssertionError: expect one argument is number")
+        return
     try:
         num = int(argv[1])
-        print ("I'm EVEN" if num % 2 else "I'm Odd")
+        print("I'm Odd" if num % 2 else "I'm Even")
     except (ValueError):
-        print ("AssertionError: argument is not an integer")
+        print("AssertionError: argument is not an integer")
+
 
 if __name__ == "__main__":
     whatis(sys.argv)

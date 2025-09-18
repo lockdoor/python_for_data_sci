@@ -13,7 +13,8 @@ morse_code_dict = {
 }
 
 
-def main():
+def main() -> None:
+    """Main function to convert input string to Morse code."""
     morse_code = ""
     error_message = "AssertionError: the arguments are bad"
     if len(sys.argv) != 2:
@@ -21,11 +22,12 @@ def main():
     else:
         try:
             s = str(sys.argv[1])
-            # print(s.upper())
             for c in s.upper():
                 morse_code += morse_code_dict[c]
+                morse_code += ' '
         except KeyError:
             morse_code = error_message
+        morse_code = morse_code.strip()
     print(morse_code)
 
 

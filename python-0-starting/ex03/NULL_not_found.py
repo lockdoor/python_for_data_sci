@@ -3,7 +3,7 @@ def NULL_not_found(obj: any) -> int:
         prefix = "Nothing: None"
     elif isinstance(obj, float) and obj != obj:
         prefix = "Cheese: nan"
-    elif type(obj) == int and obj == 0:
+    elif isinstance(obj, int) and obj == 0:
         prefix = "Zero: 0"
     elif isinstance(obj, str) and obj == '':
         prefix = "Empty"
@@ -12,19 +12,12 @@ def NULL_not_found(obj: any) -> int:
     else:
         print("Type not Found")
         return 1
-    print (f'{prefix} {type(obj)}')
+    print(f'{prefix} {type(obj)}')
     return 0
 
-# when evaluation copy this to tester.py
-if __name__ == "__main__":
-    Nothing = None
-    Garlic = float("NaN")
-    Zero = 0
-    Empty = ''
-    Fake = False
-    NULL_not_found(Nothing)
-    NULL_not_found(Garlic)
-    NULL_not_found(Zero)
-    NULL_not_found(Empty)
-    NULL_not_found(Fake)
-    print(NULL_not_found("Brian"))
+
+"""
+This exercise is experimenting with the idea that
+0, NaN, Empty, False is not NULL.
+Python is OOP and everything is an object.
+"""
