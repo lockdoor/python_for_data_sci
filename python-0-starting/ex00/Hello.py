@@ -1,7 +1,23 @@
-ft_list = ["Hello", "World!"]
-ft_tuple = ("Hello", "Thailand!")
-ft_set = {"Hello", "Bangkok!"}
-ft_dict = {"Hello": "42Bangkok!"}
+ft_list = ["Hello", "tata!"]
+ft_tuple = ("Hello", "toto!")
+ft_set = {"Hello", "tutu!"}
+ft_dict = {"Hello": "titi!"}
+
+# list is mutable we can change it by index
+ft_list[1] = "world!"
+
+# tuple is immutable cannot be changed to change it should change to list
+lst = list(ft_tuple)
+lst[1] = "Thailand!"
+ft_tuple = tuple(lst)
+
+# set is unordered collection of unique elements
+# so we cannot change it by index but we can add or remove elements
+ft_set.remove("tutu!")
+ft_set.add("Bangkok!")
+
+# dictionary is mutable we can change it by key
+ft_dict["Hello"] = "42Bangkok!"
 
 if __name__ == '__main__':
     print(ft_list)

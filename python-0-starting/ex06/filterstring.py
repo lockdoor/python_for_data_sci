@@ -17,7 +17,7 @@ def filterstring(sentence: str, amount: int) -> list:
     '''
     words = [s for s in sentence.split(" ") if not
              len(list(ft_filter(lambda c: c in string.punctuation, s)))]
-    return list(ft_filter(lambda x: len(x) >= amount, words))
+    return list(ft_filter(lambda x: len(x) > amount, words))
 
 
 def main() -> None:

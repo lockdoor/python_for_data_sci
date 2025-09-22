@@ -36,10 +36,9 @@ def main() -> None:
     elif len(sys.argv) == 2:
         building(sys.argv[1])
     else:
-        try:
-            building(input("What is the text to count?\n") + '\n')
-        except EOFError:
-            pass
+        print("What is the text to count?")
+        input_text = sys.stdin.readline()
+        building(input_text)
 
 
 if __name__ == "__main__":
