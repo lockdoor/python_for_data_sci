@@ -3,7 +3,7 @@ from .statistics import ft_statistics
 import numpy as np
 
 
-class TestFtTestArgs(unittest.TestCase):
+class TestStatistics(unittest.TestCase):
 
     def test_validation(self):
 
@@ -29,16 +29,23 @@ class TestFtTestArgs(unittest.TestCase):
         self.assertEqual(str(e.exception), "Required at lease one kwargs")
 
     def test_first(self):
+        print('ft_statistics')
         lst = [1, 42, 360, 11, 64]
         ft_statistics(*lst, toto="mean", tutu="median", tata="quartile")
+
+        print('numpy')
         lst_np = np.array(lst)
         print(f'mean : {np.mean(lst_np)}')
         print(f'median : {np.median(lst_np)}')
         print(f'quartile : {np.percentile(lst_np, [25, 75])}')
+        print()
 
     def test_second(self):
+        print('ft_statistics')
         lst = [5, 75, 450, 18, 597, 27474, 48575]
         ft_statistics(*lst, hello="std", world="var")
+
+        print('numpy')
         lst_np = np.array(lst)
         print(f'std : {np.std(lst_np)}')
         print(f'var : {np.var(lst_np)}')

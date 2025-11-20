@@ -1,4 +1,4 @@
-from callLimit import callLimit
+from .callLimit import callLimit
 
 
 @callLimit(3)
