@@ -10,7 +10,6 @@ exceptiongroup==1.3.0
 executing==2.2.1
 flake8==7.3.0
 fonttools==4.60.0
-ft_package @ file:///Users/pitsanunamnil/Desktop/python_for_data_science/python-0-starting/ex09/ft_package/dist/ft_package-0.0.1-py3-none-any.whl#sha256=1d49586343ab3778b590caad2c49626f77c9cacfb14d54e1c08a688a3aa7fcd2
 ipykernel==6.30.1
 ipython==8.37.0
 jedi==0.19.2
