@@ -19,6 +19,8 @@ class TestDimondTrap(unittest.TestCase):
 
         # print(Joffrey.__doc__)
         # print(Joffrey.die.__doc__)
+        # for understand diamond trap should print mro
+        # mro is Method Resolution Order
         # print(King.mro())
 
         Joffrey.set_eyes('blue')

@@ -24,5 +24,8 @@ class TestS1E9(unittest.TestCase):
             Lyanna.__dict__, {'first_name': 'Lyanna', 'is_alive': False})
 
     def test_can_not_instantiate_Character(self):
-        with self.assertRaises(TypeError):
+        with self.assertRaises(TypeError) as e:
             Character('name')
+        err_message = "Can't instantiate abstract \
+class Character with abstract method die"
+        self.assertEqual(str(e.exception), err_message)

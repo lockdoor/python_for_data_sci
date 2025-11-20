@@ -5,4 +5,10 @@ if __name__ == "__main__":
     student = Student(name="Edward", surname="agle")
     print(student)
 
+    student = Student("Pnamnil", '42Bangkok')
+    print(student)
+
+    student = Student("Pnamnil", '42Bangkok', False)
+    print(student)
+
     student = Student(name="Edward", surname="agle", id='slkj')

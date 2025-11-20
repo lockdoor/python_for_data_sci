@@ -8,7 +8,7 @@ class TestS1E7(unittest.TestCase):
 
     def test_Baratheon(self):
         Robert = Baratheon("Robert")
-        d = {
+        d: dict = {
             'first_name': 'Robert',
             'is_alive': True,
             'family_name': 'Baratheon',
@@ -16,11 +16,17 @@ class TestS1E7(unittest.TestCase):
             'hairs': 'dark'
         }
         self.assertEqual(Robert.__dict__, d)
-        s = "<bound method Baratheon.__str__ of Vector: \
+        s: str = "<bound method Baratheon.__str__ of Vector: \
 ('Baratheon', 'brown', 'dark')>"
         self.assertEqual(str(Robert.__str__), s)
-        r = s.replace('str', 'repr')
+        r: str = s.replace('str', 'repr')
         self.assertEqual(str(Robert.__repr__), r)
+        result: str = "Vector: ('Baratheon', 'brown', 'dark')"
+        # when print(Robert) will take result
+        # print(Robert)
+        self.assertEqual(str(Robert), result)
+        self.assertEqual(str(Robert), Robert.__str__())
+        self.assertEqual(str(Robert), Robert.__repr__())
         self.assertTrue(Robert.is_alive)
         self.assertEqual(Robert.__doc__, "Docstring for Baratheon Class")
 
@@ -41,7 +47,7 @@ class TestS1E7(unittest.TestCase):
         self.assertEqual(str(Cersei.__str__), s)
 
     def test_create_lannister(self):
-        Jaine = Lannister.create_lannister("Jaine", True)
+        Jaine: Lannister = Lannister.create_lannister("Jaine", True)
 
         result = f"Name : {Jaine.first_name, type(Jaine).__name__}, \
 Alive : {Jaine.is_alive}"
