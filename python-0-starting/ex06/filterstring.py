@@ -24,10 +24,15 @@ def main() -> None:
     '''
     Main function to handle input and call filterstring function
     '''
-    if len(sys.argv) != 3:
-        print("AssertionError: the argument are bad")
-    else:
+    # if len(sys.argv) != 3:
+    #     print("AssertionError: the argument are bad")
+    # else:
+    #     print(filterstring(sys.argv[1], int(sys.argv[2])))
+    try:
+        assert len(sys.argv) == 3
         print(filterstring(sys.argv[1], int(sys.argv[2])))
+    except AssertionError:
+        print("AssertionError: the argument are bad")
 
 
 if __name__ == "__main__":
